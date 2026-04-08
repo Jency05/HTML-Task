@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design a button with visually appealing hover effect using transform and transition</title>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 100px;
+}
+
+
+.btn1 {
+    position: relative;
+    z-index:2; 
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.btn2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 16px;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background: #222;
+    color: white;
+    background-image: url(call.jpg);
+
+   
+    transform: translateX(0);
+    transition: transform 0.4s ease;
+}
+
+
+.container:hover .btn2 {
+    transform: translateX(200px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <button class="btn1">CALL US</button>
+    <button class="btn2">8695898670</button>
+</div>
+
+</body>
+</html>

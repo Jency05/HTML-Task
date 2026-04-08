@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alphabetical Sorting</title>
+</head>
+<style>
+    body{
+        font-family: Arial;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(background.jpg);
+    }
+    .container{
+         background: rgb(20, 20, 20);
+    height: 295px;
+    width: 389px;
+    border:1px solid rgb(20, 20, 20);
+    border-radius:20px;
+    box-shadow: 0 0 10px gray;
+
+    }
+    .box1{
+        border: 1px solid rgb(20, 20, 20);
+        width: 250px;
+        background: rgb(88, 82, 82);
+        border-radius: 10px;
+        color: black;
+        position: relative;
+        top: 10px;
+        left: 65px;
+        text-align: center;
+
+    }
+    .box2{
+        color: white;
+        text-align: center;
+        position: relative;
+        right: 55px;
+    }
+    .box3{
+        position: relative;
+        left: -20px;
+        bottom: 10px;
+         text-align: center;
+    }
+    button{
+    background:grey;
+    color:black;
+    border:none;
+    border-radius:1px;
+    cursor:pointer;
+    position: relative;
+    bottom: 23px;
+    left: 110px;
+    height: 30px;
+    width: 165px;
+    padding: 5px;
+    }
+    p{
+        border: 1px solid grey;
+        color: white;
+        border-radius: 7px;
+        width: 200px;
+        height: 25px;
+        position: relative;
+        bottom: 10px;
+        left: 85px;
+        text-align: center;
+        padding: 6px;
+    }
+    button:hover{
+        
+        transform: scale(1.1);
+    }
+</style>
+<body>
+    <div class="container">
+     <div class="box1">
+        <h4>Alphabetical Sorting...</h4>
+     </div>
+                 
+        <div class="box2">
+            <h4>Enter a String</h4>
+        </div>
+        
+        <div class="box3">
+            <input type="text" id="text" placeholder="Enter a String">
+        </div>
+<br><br>
+
+<button onclick="sortString()">CALCULATE</button>
+
+<p id="result"></p>
+
+    </div>
+
+
+<script>
+
+function sortString()
+{
+    var str = document.getElementById("text").value;
+
+    var lower = "";
+    var upper = "";
+
+    for(var i=0;i<str.length;i++)
+    {
+        var ch = str[i];
+
+        if(ch >= 'a' && ch <= 'z')
+        lower += ch;
+
+        else if(ch >= 'A' && ch <= 'Z')
+        upper += ch;
+    }
+
+    lower = lower.split('').sort().join('');
+    upper = upper.split('').sort().join('');
+
+    document.getElementById("result").innerHTML = lower + upper;
+}
+
+</script>
+
+</body>
+</html>

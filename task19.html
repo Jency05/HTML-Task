@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1{
+            margin-bottom: 20px;
+        }
+        .moon-toggle{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            cursor: cell;
+            transform: scale(2);
+        }
+        .moon-toggle::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background-color: currentColor;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        .light-mode{
+            background-color: white;
+            color: black;
+        }
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="container">
+        <h1>Dark/Light mode Toggle</h1>
+        <div class="moon-toggle" onclick="dhanu()"></div>
+    </div>
+    <script>
+        function dhanu(){
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode')
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Captcha Generator</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:grey;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+}
+
+.captcha-box{
+    background:black;
+    color:white;
+    font-size:30px;
+    padding:20px 60px;
+    border-radius:10px;
+    margin-bottom:20px;
+    letter-spacing:5px;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#222;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="captcha-box" id="captcha">
+</div>
+
+<button onclick="generateCaptcha()">Generate New Captcha</button>
+
+</div>
+
+<script>
+
+function generateCaptcha()
+{
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var captcha = "";
+
+    for(var i=0;i<6;i++)
+    {
+        captcha += chars.charAt(Math.floor(Math.random()*chars.length));
+    }
+
+    document.getElementById("captcha").innerHTML = captcha;
+}
+
+generateCaptcha();
+
+</script>
+
+</body>
+</html>

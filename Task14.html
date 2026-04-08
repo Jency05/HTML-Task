@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Combine Two Inputs</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    border: 3px solid black;
+    border-radius: 3px;
+    box-shadow: 0 0 10px black;
+}
+.box1{
+     background-color:rgb(100, 94, 94);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 0 10px black;
+    position: relative;
+    right: 200px;
+}
+.box1 img{
+    width: 200px;
+    height: 100px;
+    background-repeat: no-repeat;
+}
+.box2{
+    position: relative;
+    bottom: 350px;
+    left: 200px;
+}
+.box3{
+    display: flex;
+     gap: 20px;
+    position: relative;
+    bottom: 350px;
+    left: 200px;
+
+}
+button{
+    padding:10px 20px;
+    background:#333;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    position: absolute;
+    bottom: 460px;
+    right: 520px;
+}
+#output{
+     margin-top:30px;
+    padding:10px;
+     position: relative;
+     bottom: 297px;
+     left: 210px;
+    height: 20px;
+    width: 280px;
+    border:1px solid black;
+}
+.box3:hover{
+    scale: calc(1.1);
+}
+button:hover{
+    scale: calc(1.1);
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="box1">
+        <h1>COMBINE</h1>
+
+<h2>Two User Input</h2>
+<h1>👤+👤=👥</h1>
+<img src="operators img.png" alt="image">
+
+    </div>
+
+
+<div class="box2">
+    <h1>Input Here</h1>
+    <br>
+    </div>
+    
+    <div class="box3">
+        <input type="text" id="first" placeholder="First Input">
+    <input type="text" id="second" placeholder="Second Input">
+    </div>
+    
+
+<br>
+    <button onclick="combine()">Submit →</button>
+
+<div id="output">Output:</div>
+
+
+
+</div>
+<script>
+
+function combine()
+{
+    var a = document.getElementById("first").value;
+    var b = document.getElementById("second").value;
+
+    var result = a + " " + b;
+
+    document.getElementById("output").innerHTML = "Output: " + result;
+}
+
+</script>
+
+</body>
+</html>

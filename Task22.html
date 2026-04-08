@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#2f2f2f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    width:300px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:70%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    padding:8px 12px;
+    background:#444;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#222;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+    margin-top:15px;
+}
+
+li{
+    background:#f4f4f4;
+    margin:8px 0;
+    padding:8px;
+    display:flex;
+    justify-content:space-between;
+    border-radius:5px;
+}
+
+.delete{
+    background:red;
+    color:white;
+    border:none;
+    padding:4px 8px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>TO DO LIST</h2>
+
+<input type="text" id="task" placeholder="Enter task">
+<button onclick="addTask()">ADD</button>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<script>
+
+function addTask()
+{
+    var task = document.getElementById("task").value;
+
+    if(task === "")
+    {
+        alert("Enter a task");
+        return;
+    }
+
+    var li = document.createElement("li");
+    li.innerHTML = task + " <button class='delete' onclick='removeTask(this)'>🗑️</button>";
+
+    document.getElementById("taskList").appendChild(li);
+
+    document.getElementById("task").value = "";
+}
+
+function removeTask(button)
+{
+    button.parentElement.remove();
+}
+
+</script>
+
+</body>
+</html>

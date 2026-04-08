@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Find Most Frequent Character</title>
+</head>
+<style>
+    body{
+        font-family: Arial;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background-image: url(task16pic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .container{
+        background: grey;
+    height: 300px;
+    width: 440px;
+    border:1px solid black;
+    border-radius:20px;
+    box-shadow: 0 0 10px gray;
+    }
+    .box1{
+        text-align: center;
+    }
+    .box2{
+        text-align: center;
+    }
+    button{
+        padding:10px 20px;
+    background:#333;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    position: relative;
+    bottom: 10px;
+    left: 160px;
+    }
+    p{
+        border: 1px solid black;
+        border-radius: 7px;
+        box-shadow: 0 0 5px white;
+        width: 200px;
+        height: 25px;
+        position: relative;
+        left: 125px;
+        text-align: center;
+        padding: 6px;
+    }
+    button:hover{
+        scale: calc(1.1);
+    }
+
+</style>
+
+<body>
+<div class="container">
+    <div class="box1">
+        <h1>Find Most Frequent Character</h1>
+
+    </div>
+    <div class="box2">
+        <input type="text" id="text" value="T4TEQ SoftWare SoluTion">
+    </div>
+
+
+<br><br>
+
+<button onclick="findChar()">Click to Find....</button>
+        
+<p id="result"></p>
+
+
+</div>
+
+
+<script>
+function findChar()
+{
+    var str = document.getElementById("text").value;
+
+    var freq = {};
+    var maxChar = "";
+    var maxCount = 0;
+
+    for(var i=0; i<str.length; i++)
+    {
+        var ch = str[i];
+
+        if(freq[ch])
+            freq[ch]++;
+        else
+            freq[ch] = 1;
+
+        if(freq[ch] > maxCount)
+        {
+            maxCount = freq[ch];
+            maxChar = ch;
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+    maxChar + " (Appears " + maxCount + " times)";
+}
+</script>
+
+</body>
+</html>

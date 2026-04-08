@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Create a flex container with hover effects</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .card-container{
+            display: flex;
+            gap: 20px;
+
+        }
+        .card{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            border-radius: 15px;
+            background-size: 200px 400px;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+            
+        }
+        .overlay{
+            position: relative;
+            top: 8px;
+            right: 8px;
+            text-shadow: 1px 1px 10px black;
+            color: azure;
+        }
+        .overlay span{
+            
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+
+        }
+        .overlay h3{
+            font-size: 18px;
+        }
+        .card-container:hover .card{
+            filter: blur(10px) brightness(0.7);
+            transform: scale(0.95);
+        }
+        .card-container:hover .card:hover{
+             filter: blur(0px) brightness(100%);
+            transform: scale(1.05);
+            
+        }
+        .overlay1{
+            height: 0;
+            width: 0;
+            position: relative;
+            right: 180px;
+            color: rgb(224, 217, 222);
+        }
+        .overlay2{
+            height: 0;
+            width: 0;
+            position: relative;
+            right: 180px;
+            color:  rgb(224, 217, 222);
+        }
+        .overlay3{
+            height: 0;
+            width: 0;
+            position: relative;
+            right: 180px;
+            color: rgb(224, 217, 222);
+        }
+        .overlay4{
+            height: 0;
+            width: 0;
+            position: relative;
+            right: 180px;
+            color: rgb(224, 217, 222);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" style="background-image: url(Japan.jpg);"></div>
+            <div class="overlay1">
+                <span>VOYAGE</span>
+                <h3>Japan</h3>
+            </div>
+        
+        <div class="card" style="background-image: url(USA.jpg);"></div>
+            <div class="overlay2">
+                <span>VOYAGE</span>
+                <h3>United States</h3>
+            </div>
+        
+        <div class="card" style="background-image: url(France.jpg);"> </div>
+            <div class="overlay3">
+                <span>VOYAGE</span>
+                <h3>France</h3>
+            </div>
+       
+        <div class="card" style="background-image: url(Canada.jpg);"> </div>
+            <div class="overlay4">
+                <span>VOYAGE</span>
+                <h3>Canada</h3>
+            </div>
+       
+    </div>
+</body>
+</html>
